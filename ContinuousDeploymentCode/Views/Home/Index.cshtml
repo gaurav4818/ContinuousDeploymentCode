@@ -1,9 +1,12 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-   <h1>Employee Table</h1>
+   <h1>@Configuration["ConfigSettng:Name"]</h1>
 
    <table style="width:100%; border:1px solid black">
        <thead>
