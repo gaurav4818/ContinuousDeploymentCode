@@ -3,7 +3,17 @@
 *@
 @{
 }
-<h1>this is production  website demo</h1>
+<h1>this is production website demo</h1>
+
+<table id="table1" style="width:100%; border:1px solid black">
+       <thead>
+           <tr>
+               <th  style="border:1px solid black" class="yourTableTh">Course Id</th>
+               <th  style="border:1px solid black" class="yourTableTh">Course Name</th>
+       </thead>
+       <tbody></tbody>
+       </table>
+
   <script src="/lib/jquery/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -12,6 +22,14 @@
             type:"Get",
             success: function(result){
                 console.log(result);
+               var items ='';
+               $.each(result, function (i, item) {  
+                            var rows = "<tr>"  
+                            + "<td style='border:1px solid black' class='yourTableTh'>" + item.id + "</td>"  
+                            + "<td style='border:1px solid black' class='yourTableTh'>" + item.name + "</td>" 
+                            + "</tr>";  
+                            $('#table1 tbody').append(rows);  
+                        });  
             },
             error:function(){
                 console.log(result);
