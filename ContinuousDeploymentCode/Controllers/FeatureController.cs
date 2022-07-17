@@ -18,5 +18,16 @@ namespace ContinuousDeploymentCode.Controllers
         {
             return View();
         }
+
+        [FeatureGate(MyFeatureFlags.staging)]
+        public IActionResult Staging()
+        {
+            return View();
+        }
+        [FeatureGate(MyFeatureFlags.production)]
+        public IActionResult Production()
+        {
+            return View();
+        }
     }
 }
