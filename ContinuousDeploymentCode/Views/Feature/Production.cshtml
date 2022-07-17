@@ -8,6 +8,7 @@
 <table id="table1" style="width:100%; border:1px solid black">
        <thead>
            <tr>
+                 <th  style="border:1px solid black" class="yourTableTh">Index</th>
                <th  style="border:1px solid black" class="yourTableTh">Course Id</th>
                <th  style="border:1px solid black" class="yourTableTh">Course Name</th>
        </thead>
@@ -25,6 +26,7 @@
                var items ='';
                $.each(result, function (i, item) {  
                             var rows = "<tr>"  
+                             + "<td style='border:1px solid black' class='yourTableTh'>" + i + "</td>"  
                             + "<td style='border:1px solid black' class='yourTableTh'>" + item.id + "</td>"  
                             + "<td style='border:1px solid black' class='yourTableTh'>" + item.name + "</td>" 
                             + "</tr>";  
