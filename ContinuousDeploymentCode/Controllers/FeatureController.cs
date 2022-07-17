@@ -8,7 +8,7 @@ namespace ContinuousDeploymentCode.Controllers
     {
         private readonly IFeatureManager _featureManager;
 
-        public FeatureController(IFeatureManager featureManager)
+        public FeatureController(IFeatureManagerSnapshot featureManager)
         {
             this._featureManager = featureManager;
         }
