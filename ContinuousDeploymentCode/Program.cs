@@ -1,3 +1,5 @@
+using Microsoft.FeatureManagement;
+
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = "Endpoint=https://appconfig9009.azconfig.io;Id=Yd8n-lh-s0:OSvWr79RTAWgfAi0QZ/S;Secret=Uh3U2Io2Oy3AB+t0X8CU5d84fTWPHtZn7i+goiD01C0=";
 // Add services to the container.
@@ -8,6 +10,7 @@ builder.Host.ConfigureAppConfiguration(builder =>
     option.Connect(connectionString).UseFeatureFlags());
 }).ConfigureServices(services =>
             {
+                services.AddFeatureManagement();
                 services.AddControllersWithViews();
             });
 
