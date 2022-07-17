@@ -4,9 +4,9 @@ var connectionString = "Endpoint=https://appconfig9009.azconfig.io;Id=Yd8n-lh-s0
 builder.Host.ConfigureAppConfiguration(builder =>
 {
     //Connect to your App Config Store using the connection string
-    builder.AddAzureAppConfiguration(connectionString);
-})
-            .ConfigureServices(services =>
+    builder.AddAzureAppConfiguration(option =>
+    option.Connect(connectionString).UseFeatureFlags());
+}).ConfigureServices(services =>
             {
                 services.AddControllersWithViews();
             });
